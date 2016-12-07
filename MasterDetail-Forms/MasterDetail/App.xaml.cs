@@ -20,34 +20,19 @@ namespace MasterDetail
 
 		public static void SetMainPage()
 		{
-            if (!Settings.IsLoggedIn)
-            {
-                Current.MainPage = new NavigationPage(new LoginPage())
-                {
-                    BarBackgroundColor = (Color)Current.Resources["Primary"],
-                    BarTextColor = Color.White
-                };
-            }
-            else
-            {
-                GoToMainPage();
-            }
-		}
-
-        public static void GoToMainPage()
-        {
             Current.MainPage = new TabbedPage
             {
-                Children = {
-                            new NavigationPage(new ItemsPage())
-                            {
-                                Title = "Browse"
-                            },
-                            new NavigationPage(new AboutPage())
-                            {
-                                Title = "About"
-                            },
-                        }
+                Children =
+                {
+                    new NavigationPage(new ItemsPage())
+                    {
+                        Title = "Browse"
+                    },
+                    new NavigationPage(new AboutPage())
+                    {
+                        Title = "About"
+                    },
+                }
             };
         }
 	}

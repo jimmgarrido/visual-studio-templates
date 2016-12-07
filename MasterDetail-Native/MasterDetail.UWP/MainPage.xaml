@@ -7,10 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:MasterDetail.ViewModel"
     mc:Ignorable="d">
-    <Page.DataContext>
-        <viewModels:LoginViewModel></viewModels:LoginViewModel>
-    </Page.DataContext>
-
     <Grid x:Name="RootGrid">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="NarrowVisualStateGroup">

@@ -95,7 +95,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Helpers\MessageDialog.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -106,9 +105,6 @@
     </Compile>
     <Compile Include="Views\BrowseItemDetail.xaml.cs">
       <DependentUpon>BrowseItemDetail.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Login.xaml.cs">
-      <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPivot.xaml.cs">
       <DependentUpon>MainPivot.xaml</DependentUpon>
@@ -144,10 +140,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BrowseItemDetail.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

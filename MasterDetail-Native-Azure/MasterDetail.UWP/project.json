@@ -1,14 +1,14 @@
 ﻿{
   "dependencies": {
-    "Microsoft.Azure.Mobile.Client": "2.1.1",
-    "Microsoft.Azure.Mobile.Client.SQLiteStore": "2.1.1",
+    "Microsoft.Azure.Mobile.Client": "3.0.3",
+    "Microsoft.Azure.Mobile.Client.SQLiteStore": "3.0.3",
     "Microsoft.Identity.Client": "1.0.304142221-alpha",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Newtonsoft.Json": "9.0.1",
     "Plugin.Share": "4.0.3",
     "SQLitePCL": "3.8.7.2",
     "Xam.Plugin.Connectivity": "2.2.12",
-    "Xam.Plugins.Settings": "2.1.0"
+    "Xam.Plugins.Settings": "2.5.1"
   },
   "frameworks": {
     "uap10.0": {}
