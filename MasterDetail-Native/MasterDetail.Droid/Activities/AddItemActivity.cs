@@ -14,7 +14,7 @@ using Android.Support.Design.Widget;
 using MasterDetail.Helpers;
 using MasterDetail.Model;
 using MasterDetail.ViewModel;
-using Plugin.Connectivity;
+
 using Plugin.CurrentActivity;
 
 namespace MasterDetail.Droid.Activities

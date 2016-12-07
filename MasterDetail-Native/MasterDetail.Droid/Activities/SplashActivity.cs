@@ -13,16 +13,11 @@ namespace MasterDetail.Droid.Activities
         {
             base.OnCreate(savedInstanceState);
 
-            Intent newIntent;
-            if (Settings.IsLoggedIn)
-                newIntent = new Intent(this, typeof(MainActivity));
-            else
-                newIntent = new Intent(this, typeof(LoginActivity));
+            var mainActivityIntent = new Intent(this, typeof(MainActivity));
+            mainActivityIntent.AddFlags(ActivityFlags.ClearTop);
+            mainActivityIntent.AddFlags(ActivityFlags.SingleTop);
 
-
-            newIntent.AddFlags(ActivityFlags.ClearTop);
-            newIntent.AddFlags(ActivityFlags.SingleTop);
-            StartActivity(newIntent);
+            StartActivity(mainActivityIntent);
             Finish();
         }
     }

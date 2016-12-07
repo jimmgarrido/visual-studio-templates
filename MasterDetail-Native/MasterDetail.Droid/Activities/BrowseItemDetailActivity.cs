@@ -41,8 +41,6 @@ namespace MasterDetail.Droid.Activities
 
 
             SupportActionBar.Title = item.Text;
-
-
         }
 
 
@@ -65,7 +63,5 @@ namespace MasterDetail.Droid.Activities
         {
 
         }
-
-
     }
 }

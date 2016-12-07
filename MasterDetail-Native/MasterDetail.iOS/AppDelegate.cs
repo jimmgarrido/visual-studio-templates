@@ -21,17 +21,11 @@ namespace MasterDetail.iOS
 		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
 		{
 			App.Initialize();
+            
+            Window.RootViewController = UIStoryboard.FromName("Main", null)
+                                                 .InstantiateViewController("tabViewController");
 
-
-			// Select first UIViewController.
-			if (Settings.IsLoggedIn)
-				Window.RootViewController = UIStoryboard.FromName("Main", null)
-												 .InstantiateViewController("tabViewController");
-			else
-				Window.RootViewController = UIStoryboard.FromName("Main", null)
-												 .InstantiateViewController("loginViewController");
-
-			return true;
+            return true;
 		}
 
 		public override void OnResignActivation(UIApplication application)

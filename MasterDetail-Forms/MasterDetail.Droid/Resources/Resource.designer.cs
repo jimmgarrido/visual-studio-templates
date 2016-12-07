@@ -26,9 +26,6 @@ namespace MasterDetail.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Microsoft.Identity.Client.Resource.Id.agentWebView = global::MasterDetail.Droid.Resource.Id.agentWebView;
-			global::Microsoft.Identity.Client.Resource.Layout.WebAuthenticationBroker = global::MasterDetail.Droid.Resource.Layout.WebAuthenticationBroker;
-			global::Microsoft.Identity.Client.Resource.String.ApplicationName = global::MasterDetail.Droid.Resource.String.ApplicationName;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::MasterDetail.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -2276,9 +2273,6 @@ namespace MasterDetail.Droid
 			// aapt resource value: 0x7f07003d
 			public const int activity_chooser_view_content = 2131165245;
 			
-			// aapt resource value: 0x7f07009a
-			public const int agentWebView = 2131165338;
-			
 			// aapt resource value: 0x7f070049
 			public const int alertTitle = 2131165257;
 			
@@ -2939,9 +2933,6 @@ namespace MasterDetail.Droid
 			// aapt resource value: 0x7f030038
 			public const int Toolbar = 2130903096;
 			
-			// aapt resource value: 0x7f030039
-			public const int WebAuthenticationBroker = 2130903097;
-			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -2954,9 +2945,6 @@ namespace MasterDetail.Droid
 		
 		public partial class String
 		{
-			
-			// aapt resource value: 0x7f080026
-			public const int ApplicationName = 2131230758;
 			
 			// aapt resource value: 0x7f08000f
 			public const int abc_action_bar_home_description = 2131230735;

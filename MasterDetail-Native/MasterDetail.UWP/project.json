@@ -1,9 +1,7 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
-    "Plugin.Share": "4.0.3",
-    "Xam.Plugin.Connectivity": "2.2.12",
-    "Xam.Plugins.Settings": "2.1.0"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Plugin.Share": "4.0.3"
   },
   "frameworks": {
     "uap10.0": {}
