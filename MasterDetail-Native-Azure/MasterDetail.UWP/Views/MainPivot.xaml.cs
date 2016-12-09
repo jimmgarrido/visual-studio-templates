@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Threading.Tasks;
 using MasterDetail.Model;
 using MasterDetail.ViewModel;
 using System.Collections.Specialized;
@@ -29,6 +30,7 @@ namespace MasterDetail.UWP.Views
     public sealed partial class MainPivot : Page
     {
         private ItemsViewModel browseViewModel;
+        Task loadItems;
 
         public MainPivot()
         {
@@ -37,9 +39,10 @@ namespace MasterDetail.UWP.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
+            
             browseViewModel = (ItemsViewModel)this.DataContext;
-            browseViewModel.LoadItemsCommand.Execute(null);
+            loadItems = browseViewModel.ExecuteLoadItemsCommand();
+            loadItems.Wait();
             gvItems.ItemsSource = browseViewModel.Items;
             gvItems.ItemClick += GvItems_ItemClick;
           

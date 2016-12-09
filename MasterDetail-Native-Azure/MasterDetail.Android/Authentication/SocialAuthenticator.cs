@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using MasterDetail.Services;
 using Plugin.CurrentActivity;
 
-namespace MasterDetail.Android.Authentication
+namespace MasterDetail.Droid.Authentication
 {
     public class SocialAuthentication : BaseSocialAuthenticator
     {

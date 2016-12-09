@@ -14,7 +14,7 @@ using Android.Support.Design.Widget;
 using MasterDetail.ViewModel;
 using Android.Support.V4.App;
 
-namespace MasterDetail.Android.Activities
+namespace MasterDetail.Droid.Activities
 {
     [Activity(Label = "Details", ParentActivity = typeof(MainActivity))]
     [MetaData("android.support.PARENT_ACTIVITY", Value = ".MainActivity")]

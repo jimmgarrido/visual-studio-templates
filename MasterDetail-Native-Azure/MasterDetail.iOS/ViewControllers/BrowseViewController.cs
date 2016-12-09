@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Specialized;
-
+using System.Threading.Tasks;
 using Foundation;
 using UIKit;
 
@@ -11,12 +11,15 @@ namespace MasterDetail.iOS
     public partial class BrowseViewController : UITableViewController
     {
 		UIRefreshControl refreshControl;
+        Task loadItems;
 
 		public ItemsViewModel ViewModel { get; set; }
+
 
 		public BrowseViewController(IntPtr handle) : base(handle) 
 		{ 
 			ViewModel = new ItemsViewModel();
+            loadItems = ViewModel.ExecuteLoadItemsCommand();
 		}
 
 		public override void ViewDidLoad()
@@ -40,7 +43,7 @@ namespace MasterDetail.iOS
             base.ViewDidAppear(animated);
 
             if (ViewModel.Items.Count == 0)
-                ViewModel.LoadItemsCommand.Execute(null);
+                loadItems.Wait();
         }
 
         public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
@@ -57,8 +60,8 @@ namespace MasterDetail.iOS
 
 		void RefreshControl_ValueChanged(object sender, EventArgs e)
 		{
-			if (!ViewModel.IsBusy && refreshControl.Refreshing)
-				ViewModel.LoadItemsCommand.Execute(null);
+            if (!ViewModel.IsBusy && refreshControl.Refreshing)
+                loadItems.Wait();
 		}
 
 		void IsBusy_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

@@ -2,7 +2,7 @@
 using Android.Support.V7.Widget;
 using Android.Views;
 
-namespace MasterDetail.Android
+namespace MasterDetail.Droid
 {
 	public class BaseRecycleViewAdapter : RecyclerView.Adapter
 	{

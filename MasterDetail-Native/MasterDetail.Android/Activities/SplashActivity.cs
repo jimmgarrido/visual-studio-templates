@@ -4,7 +4,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using MasterDetail.Helpers;
 
-namespace MasterDetail.Android.Activities
+namespace MasterDetail.Droid.Activities
 {
     [Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true)]
     public class SplashActivity : AppCompatActivity

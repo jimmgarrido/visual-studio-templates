@@ -12,7 +12,7 @@ using Android.Graphics;
 using MasterDetail.ViewModel;
 using MasterDetail.Helpers;
 
-namespace MasterDetail.Android.Activities
+namespace MasterDetail.Droid.Activities
 {
     [Activity(Label = "@string/login",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
