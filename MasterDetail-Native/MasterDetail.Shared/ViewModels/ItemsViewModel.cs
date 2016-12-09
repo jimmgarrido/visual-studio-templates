@@ -18,13 +18,13 @@ namespace MasterDetail.ViewModel
     public class ItemsViewModel : BaseViewModel
     {
         public ObservableRangeCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
             Items = new ObservableRangeCollection<Item>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            var task = ExecuteLoadItemsCommand();
+            task.Wait();
 
 #if __IOS__
             MessagingCenter.Subscribe<ItemNewViewController, Item>(this, "AddItem", async (obj, item) =>
@@ -51,7 +51,7 @@ namespace MasterDetail.ViewModel
 
         }
 
-        async Task ExecuteLoadItemsCommand()
+        public async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
                 return;
@@ -76,7 +76,7 @@ namespace MasterDetail.ViewModel
         }
 
 
-        public Command<string> GoToDetailsCommand { get; }
+        //public Command<string> GoToDetailsCommand { get; }
         ItemDetailViewModel detailsViewModel;
 
     }

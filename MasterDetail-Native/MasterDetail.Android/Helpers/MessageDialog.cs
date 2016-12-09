@@ -12,7 +12,7 @@ using Android.Widget;
 using Plugin.CurrentActivity;
 using MasterDetail.Interfaces;
 
-namespace MasterDetail.Android.Helpers
+namespace MasterDetail.Droid.Helpers
 {
     public class MessageDialog : IMessageDialog
     {

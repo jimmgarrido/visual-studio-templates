@@ -16,7 +16,7 @@ namespace MasterDetail.ViewModel
         {
             Title = "About";
 
-			OpenWebCommand = new Command(() => CrossShare.Current.OpenBrowser("https://xamarin.com/platform"));
+			//OpenWebCommand = new Command(() => CrossShare.Current.OpenBrowser("https://xamarin.com/platform"));
         }
 
 

@@ -11,8 +11,9 @@ using Android.Content;
 using MasterDetail.Droid.Activities;
 using MasterDetail.Helpers;
 using MasterDetail.Services;
+using System.Threading.Tasks;
 
-namespace MasterDetail.Android
+namespace MasterDetail.Droid
 {
 	public class BrowseFragment : Android.Support.V4.App.Fragment, Fragments.IFragmentVisible
     {
@@ -22,7 +23,7 @@ namespace MasterDetail.Android
 
 		BrowseItemsAdapter adapter;
         SwipeRefreshLayout refresher;
-
+        Task loadItems;
 
         ProgressBar progress;
         public ItemsViewModel ViewModel
@@ -41,6 +42,7 @@ namespace MasterDetail.Android
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			ViewModel = new ItemsViewModel();
+            loadItems = ViewModel.ExecuteLoadItemsCommand();
 
             ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
 
@@ -71,7 +73,7 @@ namespace MasterDetail.Android
             adapter.ItemClick += Adapter_ItemClick;
 
             if (ViewModel.Items.Count == 0)
-                ViewModel.LoadItemsCommand.Execute(null);
+                loadItems.Wait();
         }
 
 
@@ -99,7 +101,8 @@ namespace MasterDetail.Android
 
         private void Refresher_Refresh(object sender, EventArgs e)
         {
-            ViewModel.LoadItemsCommand.Execute(null);
+            loadItems.Wait();
+           
         }
 
         public void BecameVisible()

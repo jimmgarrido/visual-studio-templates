@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace MasterDetail.Android.Fragments
+namespace MasterDetail.Droid.Fragments
 {
     interface IFragmentVisible
     {

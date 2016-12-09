@@ -4,7 +4,7 @@ using Android.Views;
 using Android.Widget;
 using MasterDetail.ViewModel;
 
-namespace MasterDetail.Android
+namespace MasterDetail.Droid
 {
 	public class AboutFragment : Android.Support.V4.App.Fragment, Fragments.IFragmentVisible
     {
