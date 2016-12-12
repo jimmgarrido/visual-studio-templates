@@ -22,8 +22,8 @@ namespace MasterDetail
 {
     public partial class App 
     {
-        public static bool AzureNeedsSetup => AzureMobileAppUrl == "https://CONFIGURE-THIS-URL.azurewebsites.net";
-        public static string AzureMobileAppUrl = "https://myitemsapp.azurewebsites.net/";
+        public static bool AzureNeedsSetup => AzureMobileAppUrl == "CobeyConnectedTest20161212.azurewebsites.net";
+        public static string AzureMobileAppUrl = "CobeyConnectedTest20161212.azurewebsites.net";
 
         public App()
         {
