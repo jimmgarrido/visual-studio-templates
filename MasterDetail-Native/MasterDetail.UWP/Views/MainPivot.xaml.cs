@@ -10,9 +10,11 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
+using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MasterDetail.Model;
+
 using MasterDetail.ViewModel;
 using System.Collections.Specialized;
 using Windows.UI.Core;
@@ -29,6 +31,7 @@ namespace MasterDetail.UWP.Views
     public sealed partial class MainPivot : Page
     {
         private ItemsViewModel browseViewModel;
+        Task loadItems;
 
         public MainPivot()
         {
@@ -39,7 +42,8 @@ namespace MasterDetail.UWP.Views
         {
 
             browseViewModel = (ItemsViewModel)this.DataContext;
-            browseViewModel.LoadItemsCommand.Execute(null);
+            loadItems = browseViewModel.ExecuteLoadItemsCommand();
+            loadItems.Wait();
             gvItems.ItemsSource = browseViewModel.Items;
             gvItems.ItemClick += GvItems_ItemClick;
           

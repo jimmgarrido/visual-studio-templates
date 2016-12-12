@@ -17,7 +17,7 @@ using MasterDetail.ViewModel;
 using Plugin.Connectivity;
 using Plugin.CurrentActivity;
 
-namespace MasterDetail.Android.Activities
+namespace MasterDetail.Droid.Activities
 {
 
 	[Activity(Label = "AddItemActivity")]

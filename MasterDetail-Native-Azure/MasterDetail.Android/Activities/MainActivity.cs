@@ -13,7 +13,7 @@ using MasterDetail.Droid.Fragments;
 using Android.Views;
 using Android.Widget;
 
-namespace MasterDetail.Android.Activities
+namespace MasterDetail.Droid.Activities
 {
 	[Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
         LaunchMode = LaunchMode.SingleInstance,
