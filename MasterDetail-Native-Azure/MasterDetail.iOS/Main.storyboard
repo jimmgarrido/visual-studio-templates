@@ -408,7 +408,7 @@
         <!--Item New View Controller-->
         <scene sceneID="2247">
             <objects>
-                <viewController id="2248" customClass="ItemNewViewController" sceneMemberID="viewController">
+                <viewController id="2248" customClass="ItemNewViewController" sceneMemberID="viewController" title="New Item">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2245"/>
                         <viewControllerLayoutGuide type="bottom" id="2246"/>
@@ -471,7 +471,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Second" width="32" height="30"/>
         <image name="profile_generic.png" width="95" height="95"/>
         <image name="xamarin_logo.png" width="220" height="51"/>
         <image name="Icon-60.png" width="60" height="60"/>
