@@ -268,7 +268,7 @@
         <!--Item New View Controller-->
         <scene sceneID="2247">
             <objects>
-                <viewController id="2248" customClass="ItemNewViewController" sceneMemberID="viewController">
+                <viewController id="2248" customClass="ItemNewViewController" sceneMemberID="viewController" title="New Item">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2245"/>
                         <viewControllerLayoutGuide type="bottom" id="2246"/>
