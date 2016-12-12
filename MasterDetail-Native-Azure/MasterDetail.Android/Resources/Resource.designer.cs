@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("MasterDetail.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("MasterDetail.Android.Resource", IsApplication=true)]
 
-namespace MasterDetail.Droid
+namespace MasterDetail.Android
 {
 	
 	
@@ -26,9 +26,9 @@ namespace MasterDetail.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Microsoft.Identity.Client.Resource.Id.agentWebView = global::MasterDetail.Droid.Resource.Id.agentWebView;
-			global::Microsoft.Identity.Client.Resource.Layout.WebAuthenticationBroker = global::MasterDetail.Droid.Resource.Layout.WebAuthenticationBroker;
-			global::Microsoft.Identity.Client.Resource.String.ApplicationName = global::MasterDetail.Droid.Resource.String.ApplicationName;
+			global::Microsoft.Identity.Client.Resource.Id.agentWebView = global::MasterDetail.Android.Resource.Id.agentWebView;
+			global::Microsoft.Identity.Client.Resource.Layout.WebAuthenticationBroker = global::MasterDetail.Android.Resource.Layout.WebAuthenticationBroker;
+			global::Microsoft.Identity.Client.Resource.String.ApplicationName = global::MasterDetail.Android.Resource.String.ApplicationName;
 		}
 		
 		public partial class Animation

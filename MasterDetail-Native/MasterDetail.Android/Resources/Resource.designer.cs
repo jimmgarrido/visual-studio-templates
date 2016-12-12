@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("MasterDetail.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("MasterDetail.Android.Resource", IsApplication=true)]
 
-namespace MasterDetail.Droid
+namespace MasterDetail.Android
 {
 	
 	

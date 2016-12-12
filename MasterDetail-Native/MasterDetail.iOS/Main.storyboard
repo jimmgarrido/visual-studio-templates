@@ -278,12 +278,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2329">
-                                <rect key="frame" x="28" y="102" width="430" height="30"/>
+                                <rect key="frame" x="28" y="102" width="546" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Descriptio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2343">
-                                <rect key="frame" x="28" y="168" width="430" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2343">
+                                <rect key="frame" x="28" y="176" width="546" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -311,12 +311,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="2329" secondAttribute="trailing" constant="142" id="2358"/>
-                            <constraint firstAttribute="trailing" secondItem="2343" secondAttribute="trailing" constant="142" id="2359"/>
-                            <constraint firstItem="2329" firstAttribute="leading" secondItem="2249" secondAttribute="leading" constant="28" id="2362"/>
-                            <constraint firstItem="2329" firstAttribute="top" secondItem="2245" secondAttribute="bottom" constant="38" id="2363"/>
-                            <constraint firstItem="2343" firstAttribute="leading" secondItem="2249" secondAttribute="leading" constant="28" id="2364"/>
-                            <constraint firstItem="2343" firstAttribute="top" secondItem="2245" secondAttribute="bottom" constant="104" id="2365"/>
+                            <constraint id="2375" firstItem="2329" firstAttribute="top" secondItem="2245" secondAttribute="bottom" constant="38"/>
+                            <constraint id="2376" firstItem="2329" firstAttribute="leading" secondItem="2249" secondAttribute="leading" constant="28"/>
+                            <constraint id="2377" firstItem="2249" firstAttribute="trailing" secondItem="2329" secondAttribute="trailing" constant="26"/>
+                            <constraint id="2378" firstItem="2343" firstAttribute="top" secondItem="2245" secondAttribute="bottom" constant="112"/>
+                            <constraint id="2379" firstItem="2343" firstAttribute="leading" secondItem="2249" secondAttribute="leading" constant="28"/>
+                            <constraint id="2380" firstItem="2249" firstAttribute="trailing" secondItem="2343" secondAttribute="trailing" constant="26"/>
                         </constraints>
                     </view>
                     <connections>
@@ -331,7 +331,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Second" width="32" height="30"/>
         <image name="profile_generic.png" width="95" height="95"/>
         <image name="xamarin_logo.png" width="220" height="51"/>
         <image name="Icon-60.png" width="60" height="60"/>
