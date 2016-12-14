@@ -36,17 +36,18 @@ namespace MasterDetail.UWP.Views
         public MainPivot()
         {
             InitializeComponent();
+
+            browseViewModel = (ItemsViewModel)this.DataContext;
+            loadItems = browseViewModel.ExecuteLoadItemsCommand();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
-            browseViewModel = (ItemsViewModel)this.DataContext;
-            loadItems = browseViewModel.ExecuteLoadItemsCommand();
-            loadItems.Wait();
             gvItems.ItemsSource = browseViewModel.Items;
             gvItems.ItemClick += GvItems_ItemClick;
-          
+
+            if (browseViewModel.Items.Count == 0)
+                loadItems.Wait();
         }
 
 

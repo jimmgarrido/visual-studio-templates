@@ -59,6 +59,8 @@ namespace MasterDetail.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
+                MasterDetail.App.Initialize();
+
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
