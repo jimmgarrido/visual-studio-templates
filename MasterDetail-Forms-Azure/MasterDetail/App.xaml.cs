@@ -7,7 +7,9 @@ using MasterDetail.Views;
 
 using Microsoft.Identity.Client;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MasterDetail
 {
 	public partial class App : Application
