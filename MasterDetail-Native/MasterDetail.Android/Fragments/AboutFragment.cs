@@ -2,6 +2,7 @@
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Android.Support;
 using MasterDetail.ViewModel;
 
 namespace MasterDetail.Droid

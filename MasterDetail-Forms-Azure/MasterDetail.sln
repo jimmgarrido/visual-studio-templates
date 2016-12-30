@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.MobileAppServi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.UWP", "MasterDetail.UWP\MasterDetail.UWP.csproj", "{AF620556-03C9-48C9-8E2A-07B7EB5DA68A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.Android", "MasterDetail.Android\MasterDetail.Android.csproj", "{D402CD06-DDDF-4356-906A-33CB0857DEB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.Droid", "MasterDetail.Android\MasterDetail.Droid.csproj", "{D402CD06-DDDF-4356-906A-33CB0857DEB6}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
