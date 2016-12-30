@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.iOS", "MasterD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.UWP", "MasterDetail.UWP\MasterDetail.UWP.csproj", "{F61A12FE-641A-4D9A-9BBC-87FD3F7B95DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.Android", "MasterDetail.Android\MasterDetail.Android.csproj", "{2E41B792-E782-4323-B515-33DAB6929CD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.Droid", "MasterDetail.Android\MasterDetail.Droid.csproj", "{2E41B792-E782-4323-B515-33DAB6929CD0}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
