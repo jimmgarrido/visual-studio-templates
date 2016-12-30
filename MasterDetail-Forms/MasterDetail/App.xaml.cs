@@ -29,12 +29,12 @@ namespace MasterDetail
                     new NavigationPage(new ItemsPage())
                     {
                         Title = "Browse",
-						Icon = "tab_feed.png"
+						//Icon = "tab_feed.png"
                     },
                     new NavigationPage(new AboutPage())
                     {
                         Title = "About",
-						Icon = "tab_about.png"
+						//Icon = "tab_about.png"
                     },
                 }
             };
