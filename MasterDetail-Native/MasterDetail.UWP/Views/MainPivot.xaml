@@ -7,10 +7,8 @@
     xmlns:viewmodels="using:MasterDetail.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
     mc:Ignorable="d">
-    <Page.DataContext>
-        <viewmodels:ItemsViewModel/>
-    </Page.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -24,7 +22,7 @@
                    Text="AppName"
                    Foreground="White"/>
         <Pivot x:Name="rootPivot" Grid.Row="1">
-            <PivotItem Header="Browse" DataContext="{Binding BrowseItemsViewModel}">
+            <PivotItem Header="{Binding Title}" DataContext="{Binding BrowseViewModel}">
                 <ListView x:Name="gvItems" ItemsSource="{Binding Items,Mode=OneWay}" SelectionMode="Single" IsItemClickEnabled="True">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:Item">
@@ -36,7 +34,7 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </PivotItem>
-            <PivotItem Header="About">
+            <PivotItem Header="{Binding Title}" DataContext="{Binding AboutViewModel}">
                 <StackPanel>
                     <Border Background="#96d1ff" Padding="25">
                         <Image Source="/Assets/xamarin_logo.png" Grid.Row="0" Height="70"/>
@@ -50,7 +48,8 @@
                             <Bold>Xamarin Platform</Bold>. It shares code with its
                             <Bold>iOS, Android, and Windows</Bold> versions.
                     </TextBlock>
-                    <Button Content="Learn More" Margin="0,20" Background="#2196F3" Foreground="White" HorizontalAlignment="Stretch"></Button>
+                    <Button Content="Learn More" Command="{Binding OpenWebCommand}" Margin="0,20" 
+                            Background="#2196F3" Foreground="White" HorizontalAlignment="Stretch"></Button>
                 </StackPanel>
             </PivotItem>
         </Pivot>

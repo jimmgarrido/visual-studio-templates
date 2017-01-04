@@ -15,8 +15,7 @@ namespace MasterDetail.ViewModel
         public AboutViewModel()
         {
             Title = "About";
-
-			//OpenWebCommand = new Command(() => CrossShare.Current.OpenBrowser("https://xamarin.com/platform"));
+            OpenWebCommand = new OpenWeb();
         }
 
 
@@ -24,5 +23,20 @@ namespace MasterDetail.ViewModel
         /// Command to open browser to xamarin.com
         /// </summary>
         public ICommand OpenWebCommand { get; }
+    }
+
+    class OpenWeb : ICommand
+    {
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            CrossShare.Current.OpenBrowser("https://xamarin.com/platform");
+        }
     }
 }
