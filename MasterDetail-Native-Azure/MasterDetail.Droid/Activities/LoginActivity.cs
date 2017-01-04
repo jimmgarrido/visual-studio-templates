@@ -94,7 +94,7 @@ namespace MasterDetail.Droid.Activities
 
         private async void SignInButton_Click(object sender, System.EventArgs e)
         {
-           // await viewModel.SignIn();
+            await viewModel.SignIn();
         }
 
         private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

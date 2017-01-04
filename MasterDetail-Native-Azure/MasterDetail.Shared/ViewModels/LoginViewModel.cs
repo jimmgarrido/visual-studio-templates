@@ -45,20 +45,22 @@ namespace MasterDetail.ViewModel
 
         public static async Task<bool> TryLoginAsync()
         {
+            ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
+           // ServiceLocator.Instance.Register<IAuthenticator,BaseSocialAuthenticator>();
             var authentication = ServiceLocator.Instance.Get<IAuthenticator>();
-            authentication.ClearCookies();
+            //authentication.ClearCookies();
 
             var dataStore = ServiceLocator.Instance.Get<IDataStore<Item>>() as AzureDataStore;
             await dataStore.InitializeAsync();
-            var user = await authentication.LoginAsync(dataStore.MobileService, dataStore.AuthProvider, App.LoginParameters);
-            if (user == null)
-            {
+            //var user = await authentication.LoginAsync(dataStore.MobileService, dataStore.AuthProvider, App.LoginParameters);
+            //if (user == null)
+            //{
                 
 
-            }
+            //}
 
-            Settings.AuthToken = user?.MobileServiceAuthenticationToken ?? string.Empty;
-            Settings.UserId = user?.UserId ?? string.Empty;
+            //Settings.AuthToken = user?.MobileServiceAuthenticationToken ?? string.Empty;
+            //Settings.UserId = user?.UserId ?? string.Empty;
             return true;
         }
     }

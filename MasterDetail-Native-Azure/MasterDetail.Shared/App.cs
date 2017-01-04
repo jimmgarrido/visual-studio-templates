@@ -28,23 +28,25 @@ namespace MasterDetail
 
         public App()
         {
-        }
 
-        public static void Initialize()
-        {
-
-            if (AzureNeedsSetup)
+            if (!AzureNeedsSetup)
                 ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
             else
                 ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
 #if __IOS__
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
-			SQLitePCL.CurrentPlatform.Init();
+            SQLitePCL.CurrentPlatform.Init();
 #elif __ANDROID__
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 #endif
             ServiceLocator.Instance.Register<IMessageDialog, MessageDialog>();
             ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
+        }
+
+        public static void Initialize()
+        {
+
+
 
 
         }
