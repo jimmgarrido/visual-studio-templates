@@ -23,8 +23,8 @@ namespace MasterDetail
     public partial class App 
     {
         //MUST use HTTPS, neglecting to do so will result in runtime errors on iOS
-        public static bool AzureNeedsSetup => AzureMobileAppUrl == "CobeyConnectedTest20161212.azurewebsites.net";
-        public static string AzureMobileAppUrl = "CobeyConnectedTest20161212.azurewebsites.net";
+        public static bool AzureNeedsSetup => AzureMobileAppUrl == "https://CobeyConnectedTest20161212.azurewebsites.net";
+        public static string AzureMobileAppUrl = "https://CobeyConnectedTest20161212.azurewebsites.net";
 
         public App()
         {

@@ -15,8 +15,8 @@ namespace MasterDetail.Services
 {
 	public class AzureDataStore : IDataStore<Item>
 	{
-        public bool AzureNeedsSetup => AzureMobileAppUrl == "CobeyConnectedTest20161212.azurewebsites.net";
-        public string AzureMobileAppUrl = "CobeyConnectedTest20161212.azurewebsites.net";
+        public bool AzureNeedsSetup => AzureMobileAppUrl == "https://CobeyConnectedTest20161212.azurewebsites.net";
+        public string AzureMobileAppUrl = "https://CobeyConnectedTest20161212.azurewebsites.net";
 
         public bool UseAuthentication => false;
         public MobileServiceAuthenticationProvider AuthProvider => MobileServiceAuthenticationProvider.Facebook;
@@ -86,7 +86,7 @@ namespace MasterDetail.Services
 			if (UseAuthentication)
 				handler = new AuthenticationHandler();
 
-            MobileService = new MobileServiceClient(AzureMobileAppUrl, handler)
+			MobileService = new MobileServiceClient(new Uri(AzureMobileAppUrl), handler)
 			{
 				SerializerSettings = new MobileServiceJsonSerializerSettings
 				{

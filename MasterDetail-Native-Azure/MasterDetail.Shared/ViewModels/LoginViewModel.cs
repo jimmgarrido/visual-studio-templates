@@ -5,10 +5,19 @@ using MasterDetail.Helpers;
 using MasterDetail.Services;
 using MasterDetail.Model;
 
+#if __IOS__
+using MasterDetail.iOS.Authentication;
+#elif __ANDROID__
+using MasterDetail.Droid.Authentication;
+#elif WINDOWS_UWP
+using MasterDetail.UWP.Authentication;
+#endif
+
 namespace MasterDetail.ViewModel
 {
     public class LoginViewModel : BaseViewModel
     {
+
         public LoginViewModel()
         {
 
@@ -45,22 +54,22 @@ namespace MasterDetail.ViewModel
 
         public static async Task<bool> TryLoginAsync()
         {
-            ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
-           // ServiceLocator.Instance.Register<IAuthenticator,BaseSocialAuthenticator>();
-            var authentication = ServiceLocator.Instance.Get<IAuthenticator>();
-            //authentication.ClearCookies();
+            //ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
+
+			var authentication = new SocialAuthentication();
+            authentication.ClearCookies();
 
             var dataStore = ServiceLocator.Instance.Get<IDataStore<Item>>() as AzureDataStore;
             await dataStore.InitializeAsync();
-            //var user = await authentication.LoginAsync(dataStore.MobileService, dataStore.AuthProvider, App.LoginParameters);
-            //if (user == null)
-            //{
+            var user = await authentication.LoginAsync(dataStore.MobileService, dataStore.AuthProvider, App.LoginParameters);
+            if (user == null)
+            {
                 
 
-            //}
+            }
 
-            //Settings.AuthToken = user?.MobileServiceAuthenticationToken ?? string.Empty;
-            //Settings.UserId = user?.UserId ?? string.Empty;
+            Settings.AuthToken = user?.MobileServiceAuthenticationToken ?? string.Empty;
+            Settings.UserId = user?.UserId ?? string.Empty;
             return true;
         }
     }
