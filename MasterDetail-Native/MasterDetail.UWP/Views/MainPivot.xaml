@@ -39,10 +39,18 @@
             <PivotItem Header="About">
                 <StackPanel>
                     <Border Background="#96d1ff" Padding="25">
-                        <Image Source="/Assets/xamarin_logo.png" Grid.Row="0" Height="50"/>
+                        <Image Source="/Assets/xamarin_logo.png" Grid.Row="0" Height="70"/>
                     </Border>
-                    <TextBlock Text="AppName 1.0" Grid.Row="1"/>
-                    <TextBlock Text="This app is written in C# and native APIs using the Xamarin Platform. It shares code with its iOS, Android, and Windows versions" Grid.Row="2" TextWrapping="WrapWholeWords" />
+                    <TextBlock Margin="0,15" FontSize="20">
+                            <Bold>AppName&#160;</Bold>
+                            <Span Foreground="#999999">1.0</Span>
+                    </TextBlock>
+                    <TextBlock TextWrapping="WrapWholeWords">
+                            This app is written in C# and native APIs using the
+                            <Bold>Xamarin Platform</Bold>. It shares code with its
+                            <Bold>iOS, Android, and Windows</Bold> versions.
+                    </TextBlock>
+                    <Button Content="Learn More" Margin="0,20" Background="#2196F3" Foreground="White" HorizontalAlignment="Stretch"></Button>
                 </StackPanel>
             </PivotItem>
         </Pivot>
