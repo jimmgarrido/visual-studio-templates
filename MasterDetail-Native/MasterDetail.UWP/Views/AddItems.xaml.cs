@@ -26,35 +26,19 @@ namespace MasterDetail.UWP.Views
     /// </summary>
     public sealed partial class AddItems : Page
     {
-        public ItemsViewModel browseViewModel { get; set; }
         public AddItems()
         {
             this.InitializeComponent();
-
-            SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
-
-
         }
 
-        private void OnBackRequested(object sender, BackRequestedEventArgs e)
-        {
-            Frame rootFrame = Window.Current.Content as Frame;
-
-            if (rootFrame.CanGoBack)
-            {
-                e.Handled = true;
-                rootFrame.GoBack();
-            }
-        }
-
-        private void btnAddItem_Click(object sender, RoutedEventArgs e)
+        private void SaveItem_Click(object sender, RoutedEventArgs e)
         {
             var _item = new Item();
             _item.Text = txtText.Text;
             _item.Description = txtDesc.Text;
             MessagingCenter.Send(this, "AddItem", _item);
             MessagingCenter.ClearSubscribers();
-            this.Frame.Navigate(typeof(MainPivot), browseViewModel);
+            this.Frame.Navigate(typeof(MainPivot));
         }
     }
 
