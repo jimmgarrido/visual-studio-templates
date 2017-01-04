@@ -25,7 +25,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <Border  Grid.Row="0" Background="#0078d7" Padding="10">
+        <Border  Grid.Row="0" Background="{StaticResource PrimaryColor}" Padding="10">
             <TextBlock x:Name="txtTitle" Text="Add Item" VerticalAlignment="Center" FontSize="28" Foreground="White"/>
         </Border>
 
