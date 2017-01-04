@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 using MasterDetail.Helpers;
 using MasterDetail.Model;
-
+using MasterDetail;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
@@ -15,6 +15,7 @@ namespace MasterDetail.Services
 {
 	public class AzureDataStore : IDataStore<Item>
 	{
+
         public bool UseAuthentication => false;
         public MobileServiceAuthenticationProvider AuthProvider => MobileServiceAuthenticationProvider.Facebook;
 
@@ -75,6 +76,7 @@ namespace MasterDetail.Services
 
 		public async Task InitializeAsync()
 		{
+
 			if (isInitialized)
 				return;
 

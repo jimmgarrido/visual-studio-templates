@@ -23,28 +23,30 @@ namespace MasterDetail
     public partial class App 
     {
         //MUST use HTTPS, neglecting to do so will result in runtime errors on iOS
-        public static bool AzureNeedsSetup => AzureMobileAppUrl == "CobeyConnectedTest20161212.azurewebsites.net";
-        public static string AzureMobileAppUrl = "CobeyConnectedTest20161212.azurewebsites.net";
+        public static bool AzureNeedsSetup => AzureMobileAppUrl == "https://cobey20170104.azurewebsites.net";
+		public static string AzureMobileAppUrl = "https://cobey20170104.azurewebsites.net";
 
         public App()
         {
-        }
 
-        public static void Initialize()
-        {
-
-            if (AzureNeedsSetup)
+            if (!AzureNeedsSetup)
                 ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
             else
                 ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
 #if __IOS__
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
-			SQLitePCL.CurrentPlatform.Init();
+            SQLitePCL.CurrentPlatform.Init();
 #elif __ANDROID__
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 #endif
             ServiceLocator.Instance.Register<IMessageDialog, MessageDialog>();
             ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
+        }
+
+        public static void Initialize()
+        {
+
+
 
 
         }

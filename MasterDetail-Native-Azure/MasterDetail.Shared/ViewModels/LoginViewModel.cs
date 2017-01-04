@@ -5,10 +5,19 @@ using MasterDetail.Helpers;
 using MasterDetail.Services;
 using MasterDetail.Model;
 
+#if __IOS__
+using MasterDetail.iOS.Authentication;
+#elif __ANDROID__
+using MasterDetail.Droid.Authentication;
+#elif WINDOWS_UWP
+using MasterDetail.UWP.Authentication;
+#endif
+
 namespace MasterDetail.ViewModel
 {
     public class LoginViewModel : BaseViewModel
     {
+
         public LoginViewModel()
         {
 
@@ -45,7 +54,9 @@ namespace MasterDetail.ViewModel
 
         public static async Task<bool> TryLoginAsync()
         {
-            var authentication = ServiceLocator.Instance.Get<IAuthenticator>();
+
+			ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
+			var authentication = new SocialAuthenticator();
             authentication.ClearCookies();
 
             var dataStore = ServiceLocator.Instance.Get<IDataStore<Item>>() as AzureDataStore;
