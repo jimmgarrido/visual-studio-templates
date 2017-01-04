@@ -54,9 +54,9 @@ namespace MasterDetail.ViewModel
 
         public static async Task<bool> TryLoginAsync()
         {
-            //ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
 
-			var authentication = new SocialAuthentication();
+			ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
+			var authentication = new SocialAuthenticator();
             authentication.ClearCookies();
 
             var dataStore = ServiceLocator.Instance.Get<IDataStore<Item>>() as AzureDataStore;
