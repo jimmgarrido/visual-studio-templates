@@ -1,11 +1,8 @@
 ﻿using System.Collections.Generic;
 
 using MasterDetail.Helpers;
-using MasterDetail.Models;
 using MasterDetail.Services;
 using MasterDetail.Views;
-
-using Microsoft.Identity.Client;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

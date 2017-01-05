@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 
 using MasterDetail.Helpers;
 using MasterDetail.Model;
-using MasterDetail;
 using Microsoft.WindowsAzure.MobileServices;
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;

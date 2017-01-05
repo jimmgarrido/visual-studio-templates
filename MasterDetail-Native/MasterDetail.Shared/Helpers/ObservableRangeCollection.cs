@@ -3,17 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterDetail.Helpers
 {
-    /// <summary> 
-    /// Represents a dynamic data collection that provides notifications when items get added, removed, or when the whole list is refreshed. 
-    /// </summary> 
-    /// <typeparam name="T"></typeparam> 
-    public class ObservableRangeCollection<T> : ObservableCollection<T>
+	/// <summary> 
+	/// Represents a dynamic data collection that provides notifications when items get added, removed, or when the whole list is refreshed. 
+	/// </summary> 
+	/// <typeparam name="T"></typeparam> 
+	public class ObservableRangeCollection<T> : ObservableCollection<T>
     {
 
         /// <summary> 

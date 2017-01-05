@@ -1,16 +1,8 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using MasterDetail.Helpers;
-using Plugin.Share;
+﻿using System.Windows.Input;
 
 namespace MasterDetail.ViewModel
 {
-    public class AboutViewModel : BaseViewModel
+	public class AboutViewModel : BaseViewModel
     {
         public AboutViewModel()
         {

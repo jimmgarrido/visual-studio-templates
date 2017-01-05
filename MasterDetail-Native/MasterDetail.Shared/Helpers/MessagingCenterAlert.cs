@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MasterDetail.Helpers
 {
-    class MessagingCenterAlert
+	class MessagingCenterAlert
     {
         /// <summary>
         /// Init this instance.

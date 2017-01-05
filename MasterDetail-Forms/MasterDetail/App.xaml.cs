@@ -1,14 +1,9 @@
-﻿using System.Collections.Generic;
-
-using MasterDetail.Helpers;
-using MasterDetail.Models;
-using MasterDetail.Services;
-using MasterDetail.Views;
+﻿using MasterDetail.Views;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation (XamlCompilationOptions.Compile)]
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MasterDetail
 {
 	public partial class App : Application

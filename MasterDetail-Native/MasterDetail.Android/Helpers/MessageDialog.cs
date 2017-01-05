@@ -1,20 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
-using Plugin.CurrentActivity;
 using MasterDetail.Interfaces;
+using Plugin.CurrentActivity;
 
 namespace MasterDetail.Droid.Helpers
 {
-    public class MessageDialog : IMessageDialog
+	public class MessageDialog : IMessageDialog
     {
         public void SendMessage(string message, string title = null)
         {

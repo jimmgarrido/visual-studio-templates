@@ -1,16 +1,9 @@
-﻿using MasterDetail.Helpers;
-using MasterDetail.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MasterDetail.Model;
-using System.Threading.Tasks;
+﻿using MasterDetail.Model;
 
 
 namespace MasterDetail.ViewModel
 {
-    public class ItemDetailViewModel : BaseViewModel
+	public class ItemDetailViewModel : BaseViewModel
     {
         public Item Item { get; set; }
         public ItemDetailViewModel(Item item = null)

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using MasterDetail.Interfaces;
 using MasterDetail.Helpers;
 using MasterDetail.Model;
 

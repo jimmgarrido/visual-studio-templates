@@ -9,10 +9,7 @@ using System.Threading.Tasks;
 
 using MasterDetail.Helpers;
 using MasterDetail.Model;
-
-using Microsoft.Identity.Client;
 using Microsoft.WindowsAzure.MobileServices;
-using Newtonsoft.Json.Linq;
 
 namespace MasterDetail.Services
 {

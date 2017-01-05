@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-#if __ANDROID__
+﻿#if __ANDROID__
 using MasterDetail.Droid.Helpers;
 #elif __IOS__
 using MasterDetail.iOS.Helpers;
@@ -11,7 +10,6 @@ using MasterDetail.Interfaces;
 using MasterDetail.Services;
 using MasterDetail.Model;
 
-using System;
 namespace MasterDetail
 {
     public partial class App 

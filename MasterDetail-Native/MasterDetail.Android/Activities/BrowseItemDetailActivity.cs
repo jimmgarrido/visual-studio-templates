@@ -1,22 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using MasterDetail.Model;
-using Android.Support.Design.Widget;
 using MasterDetail.ViewModel;
-using Android.Support.V4.App;
 
 namespace MasterDetail.Droid.Activities
 {
-    [Activity(Label = "Details", ParentActivity = typeof(MainActivity))]
+	[Activity(Label = "Details", ParentActivity = typeof(MainActivity))]
     [MetaData("android.support.PARENT_ACTIVITY", Value = ".MainActivity")]
     public class BrowseItemDetailActivity : BaseActivity
     {

@@ -1,15 +1,12 @@
 ﻿using System;
-
-using UIKit;
+using MasterDetail.Helpers;
 using MasterDetail.Model;
 using MasterDetail.ViewModel;
-using MasterDetail.Helpers;
-using MasterDetail.Services;
-using System.Threading.Tasks;
+using UIKit;
 
 namespace MasterDetail.iOS
 {
-    public partial class ItemNewViewController : UIViewController
+	public partial class ItemNewViewController : UIViewController
     {
         public Item Item { get; set; }
         public ItemsViewModel viewModel { get; set; }

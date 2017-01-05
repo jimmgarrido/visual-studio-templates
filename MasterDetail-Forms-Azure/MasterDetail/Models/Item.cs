@@ -1,7 +1,6 @@
-﻿using System;
-namespace MasterDetail.Models
+﻿namespace MasterDetail.Models
 {
-	public class Item : BaseDataObject
+    public class Item : BaseDataObject
 	{
 		string text = string.Empty;
 		public string Text
