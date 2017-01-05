@@ -55,7 +55,7 @@
 
     <Page.BottomAppBar>
         <CommandBar Name="Toolbar" ClosedDisplayMode="Compact">
-            <AppBarButton Name="AddItemBtn" Icon="Add" Label="Add" Click="Show_Click"/>
+            <AppBarButton Name="AddItemBtn" Icon="Add" Label="Add" Click="AddItem_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

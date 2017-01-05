@@ -6,9 +6,9 @@
     RequestedTheme="Light">
     <Application.Resources>
         <ResourceDictionary>
-            <SolidColorBrush  x:Key="Primary">#2196F3</SolidColorBrush>
-            <SolidColorBrush  x:Key="PrimaryDark">#1976D2</SolidColorBrush>
-            <SolidColorBrush  x:Key="Accent">#96d1ff</SolidColorBrush>
+            <SolidColorBrush  x:Key="PrimaryColor">#2196F3</SolidColorBrush>
+            <SolidColorBrush  x:Key="PrimaryDarkColor">#1976D2</SolidColorBrush>
+            <SolidColorBrush  x:Key="AccentColor">#96d1ff</SolidColorBrush>
             <SolidColorBrush  x:Key="LightBackgroundColor">#FAFAFA</SolidColorBrush>
             <SolidColorBrush  x:Key="DarkBackgroundColor">#C0C0C0</SolidColorBrush>
             <SolidColorBrush  x:Key="MediumGrayTextColor">#4d4d4d</SolidColorBrush>

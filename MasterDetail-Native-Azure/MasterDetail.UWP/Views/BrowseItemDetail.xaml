@@ -18,7 +18,7 @@
                 <RowDefinition Height="8*"/>
                 <RowDefinition Height="86*"/>
             </Grid.RowDefinitions>
-            <Border  Grid.Row="0" Background="#0078d7" />
+            <Border  Grid.Row="0" Background="{StaticResource PrimaryColor}" />
             <TextBlock x:Name="txtTitle"
                    VerticalAlignment="Center"
                    Padding="0,12,0,0"

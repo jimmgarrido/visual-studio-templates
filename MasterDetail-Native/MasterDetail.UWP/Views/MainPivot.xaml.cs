@@ -30,7 +30,7 @@ namespace MasterDetail.UWP.Views
                 loadItems.Wait();
         }
 
-        public void Show_Click(object sender, RoutedEventArgs e)
+        public void AddItem_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddItems));
         }

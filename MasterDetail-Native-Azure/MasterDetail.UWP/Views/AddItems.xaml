@@ -9,62 +9,35 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,10"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        </Style>
+    </Page.Resources>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid x:Name="upperGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="8*"/>
-                <RowDefinition Height="8*"/>
-                <RowDefinition Height="86*"/>
-            </Grid.RowDefinitions>
-            <Border  Grid.Row="0" Background="#0078d7" />
-            <TextBlock x:Name="txtTitle"
-                   VerticalAlignment="Center"
-                   Grid.Row="0"
-                   FontSize="36"
-                   Foreground="White"/>
-            <TextBox 
-                Grid.Row="1"     
-                PlaceholderText="Title"
-                x:Name="txtText"
-                Margin="5,5,0,0"
-                FontSize="20"/>
-            <TextBox
-                Grid.Row="2"
-                x:Name="txtDesc"
-                PlaceholderText="Description"
-                Margin="5,5,0,0"
-                FontSize="20"/>
-        </Grid>
-        <Grid x:Name="lowerGrid">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="84*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
-                <RowDefinition Height="6*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="7*"></ColumnDefinition>
-                    <ColumnDefinition Width="83*"></ColumnDefinition>
-                    <ColumnDefinition Width="5*"></ColumnDefinition>
-                    <ColumnDefinition Width="5*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-            </Grid>
-            <Grid Grid.Row="2">
-                <Button 
-                    x:Name="btnAddItem" 
-                    Content="Add To My Items"
-                    FontSize="24"
-                    Click="btnAddItem_Click"
-                    Foreground="White"
-                    Background="#0078d7"
-                    HorizontalAlignment="Stretch" 
-                    Padding="50,0,50,0"
-                    Margin="20,0,20,5"
-                    VerticalAlignment="Stretch"/>
-            </Grid>
+        <Border  Grid.Row="0" Background="{StaticResource PrimaryColor}" Padding="10">
+            <TextBlock x:Name="txtTitle" Text="Add Item" VerticalAlignment="Center" FontSize="28" Foreground="White"/>
+        </Border>
 
-        </Grid>
+        <StackPanel Grid.Row="1" Padding="10">
+            <TextBox x:Name="txtText" Header="Title" PlaceholderText="Item Name" MaxHeight="120" />
+            <TextBox x:Name="txtDesc" Header="Description" PlaceholderText="This is a nice description" MaxHeight="240" />
+        </StackPanel>
     </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Save" Icon="Save" Click="SaveItem_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
