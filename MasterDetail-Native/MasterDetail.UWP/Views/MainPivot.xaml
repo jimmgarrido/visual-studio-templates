@@ -27,8 +27,8 @@
 
     <Pivot x:Name="rootPivot" Title="AppName" SelectionChanged="PivotItemChanged">
         <PivotItem Header="{Binding Title}" DataContext="{Binding BrowseViewModel}">
-            <ListView ItemsSource="{Binding Items,Mode=OneWay}" ItemTemplate="{StaticResource GvItemTemplate}"
-                      ItemClick="GvItems_ItemClick" SelectionMode="Single" IsItemClickEnabled="True">
+            <ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource GvItemTemplate}"
+                      ItemClick="GvItems_ItemClick" SelectionMode="None" IsItemClickEnabled="True">
             </ListView>
         </PivotItem>
         <PivotItem Header="{Binding Title}" DataContext="{Binding AboutViewModel}">
