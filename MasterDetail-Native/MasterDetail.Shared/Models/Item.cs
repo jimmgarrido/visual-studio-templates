@@ -1,13 +1,6 @@
-﻿using MasterDetail.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MasterDetail.Model
+﻿namespace MasterDetail.Model
 {
-    public class Item : BaseDataObject
+	public class Item : BaseDataObject
     {
         public Item() : base()
         { 

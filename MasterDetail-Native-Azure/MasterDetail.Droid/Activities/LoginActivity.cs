@@ -3,18 +3,15 @@
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using Android.Content.PM;
-using Android.Support.V4.Content;
-using Android.Graphics;
 using MasterDetail.ViewModel;
-using MasterDetail.Helpers;
 
 namespace MasterDetail.Droid.Activities
 {
-    [Activity(Label = "@string/login",
+	[Activity(Label = "@string/login",
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoginActivity : BaseActivity

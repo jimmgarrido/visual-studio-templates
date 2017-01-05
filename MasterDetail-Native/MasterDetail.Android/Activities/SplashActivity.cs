@@ -2,11 +2,10 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
-using MasterDetail.Helpers;
 
 namespace MasterDetail.Droid.Activities
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true)]
+	[Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true)]
     public class SplashActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

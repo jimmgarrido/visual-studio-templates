@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Android.App;
+using Android.Content;
 using Android.OS;
+using Android.Support.V4.Widget;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using MasterDetail.ViewModel;
-using Android.Support.V4.Widget;
-using Android.App;
-using Android.Content;
-using Android.Support.V4.App;
 using MasterDetail.Droid.Activities;
 using MasterDetail.Helpers;
 using MasterDetail.Services;
+using MasterDetail.ViewModel;
 
 namespace MasterDetail.Droid
 {
-    public class BrowseFragment : Android.Support.V4.App.Fragment, Fragments.IFragmentVisible
+	public class BrowseFragment : Android.Support.V4.App.Fragment, Fragments.IFragmentVisible
     {
 
 

@@ -11,12 +11,6 @@ using MasterDetail.Interfaces;
 using MasterDetail.Services;
 using Microsoft.Identity.Client;
 using MasterDetail.Model;
-
-#if AZURE
-
-#else
-//using MasterDetail.Services.Standard;
-#endif
 using System;
 namespace MasterDetail
 {

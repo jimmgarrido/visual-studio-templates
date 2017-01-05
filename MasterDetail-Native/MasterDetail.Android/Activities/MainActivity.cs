@@ -1,17 +1,15 @@
 ﻿
 
 using Android.App;
-using Android.OS;
-using Android.Support.V7.App;
-using Android.Support.V4.App;
-using System.Collections.Generic;
-using Android.Support.V4.View;
-using Android.Support.Design.Widget;
 using Android.Content;
 using Android.Content.PM;
-using MasterDetail.Droid.Fragments;
+using Android.OS;
+using Android.Support.Design.Widget;
+using Android.Support.V4.App;
+using Android.Support.V4.View;
 using Android.Views;
 using Android.Widget;
+using MasterDetail.Droid.Fragments;
 
 namespace MasterDetail.Droid.Activities
 {

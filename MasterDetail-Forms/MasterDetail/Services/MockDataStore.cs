@@ -7,7 +7,7 @@ using MasterDetail.Models;
 
 using Xamarin.Forms;
 
-[assembly: Xamarin.Forms.Dependency(typeof(MasterDetail.Services.MockDataStore))]
+[assembly: Dependency(typeof(MasterDetail.Services.MockDataStore))]
 namespace MasterDetail.Services
 {
 	public class MockDataStore : IDataStore<Item>
