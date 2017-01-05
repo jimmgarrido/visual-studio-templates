@@ -1,57 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using MasterDetail.Model;
+using MasterDetail.ViewModel;
+using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using System.Threading.Tasks;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using MasterDetail.Model;
-
-using MasterDetail.ViewModel;
-using System.Collections.Specialized;
-using Windows.UI.Core;
-
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace MasterDetail.UWP.Views
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-   
     public sealed partial class MainPivot : Page
     {
-        private ItemsViewModel browseViewModel;
+        public ItemsViewModel BrowseViewModel { get; private set; }
+        public AboutViewModel AboutViewModel { get; private set; }
+
         Task loadItems;
 
         public MainPivot()
         {
             InitializeComponent();
 
-            browseViewModel = (ItemsViewModel)this.DataContext;
-            loadItems = browseViewModel.ExecuteLoadItemsCommand();
+            BrowseViewModel = new ItemsViewModel();
+            AboutViewModel = new AboutViewModel();
+
+            loadItems = BrowseViewModel.ExecuteLoadItemsCommand();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            gvItems.ItemsSource = browseViewModel.Items;
-            gvItems.ItemClick += GvItems_ItemClick;
-
-            if (browseViewModel.Items.Count == 0)
+            if (BrowseViewModel.Items.Count == 0)
                 loadItems.Wait();
         }
 
-
-        public void Show_Click(object sender, RoutedEventArgs e)
+        public void AddItem_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddItems));
         }
@@ -63,11 +42,22 @@ namespace MasterDetail.UWP.Views
             {
                 return;
             }
-            // this.Frame.Navigate(typeof(BrowseItemDetail((item)));
+
             var db = new ItemDetailViewModel(item);
             this.Frame.Navigate(typeof(BrowseItemDetail), item);
-            gvItems.SelectedItem = null;
         }
 
+        private void PivotItemChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (((Pivot)sender).SelectedIndex)
+            {
+                case 0:
+                    Toolbar.Visibility = Visibility.Visible;
+                    break;
+                case 1:
+                    Toolbar.Visibility = Visibility.Collapsed;
+                    break;
+            }
+        }
     }
 }
