@@ -37,7 +37,7 @@
                     <Image Source="/Assets/xamarin_logo.png" Height="70"/>
                 </Border>
                 <StackPanel Padding="10">
-                    <TextBlock Margin="0,15" FontSize="20">
+                    <TextBlock Margin="0,20" FontSize="20">
                             <Bold>AppName&#160;</Bold>
                             <Span Foreground="{StaticResource LightTextColor}">1.0</Span>
                     </TextBlock>
