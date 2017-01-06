@@ -16,6 +16,8 @@ namespace MasterDetail.UWP.Views
 
         public MainPivot()
         {
+            NavigationCacheMode = NavigationCacheMode.Required;
+
             InitializeComponent();
 
             BrowseViewModel = new ItemsViewModel();
@@ -38,12 +40,6 @@ namespace MasterDetail.UWP.Views
         private void GvItems_ItemClick(object sender, ItemClickEventArgs e)
         {
             var item = e.ClickedItem as Item;
-            if (item == null)
-            {
-                return;
-            }
-
-            var db = new ItemDetailViewModel(item);
             this.Frame.Navigate(typeof(BrowseItemDetail), item);
         }
 

@@ -7,43 +7,49 @@
     xmlns:viewmodels="using:MasterDetail.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Background="{StaticResource PrimaryColor}">
+
+    <Page.Resources>
+        <Style x:Key="DescStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style x:Key="DescHeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource DescStyle}">
+            <Setter Property="Foreground" Value="{StaticResource LightTextColor}"/>
+            <Setter Property="FontWeight" Value="SemiLight"/>
+        </Style>
+
+        <Style x:Key="TitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Margin" Value="0,10,0,25"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid x:Name="upperGrid">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
 
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="8*"/>
-                <RowDefinition Height="8*"/>
-                <RowDefinition Height="86*"/>
-            </Grid.RowDefinitions>
-            <Border  Grid.Row="0" Background="{StaticResource PrimaryColor}" />
-            <TextBlock x:Name="txtTitle"
-                   VerticalAlignment="Center"
-                   Padding="0,12,0,0"
-                   Grid.Row="0"
-                   Text="AppName"
-                   FontSize="36"
-                   Foreground="White"/>
-            <TextBlock 
-                Grid.Row="1"
-                x:Name="txtText"
-                Margin="5,5,0,0"
-                FontSize="20"/>
-            <TextBlock
-                Grid.Row="2"
-                x:Name="txtDesc"
-                Margin="5,5,0,0"
-                FontSize="20"/>
-        </Grid>
-        <Grid x:Name="lowerGrid">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="84*"></RowDefinition>
-                <RowDefinition Height="10*"></RowDefinition>
-                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            <Border Grid.Row="0" Background="{StaticResource PrimaryColor}" Padding="10">
+                <TextBlock x:Name="txtTitle" Text="AppName" VerticalAlignment="Center" FontSize="28" Foreground="White"/>
+            </Border>
+
+            <StackPanel Grid.Row="1" Padding="10">
+                <TextBlock Text="{Binding Item.Text}" Style="{StaticResource TitleStyle}"/>
+                <TextBlock Text="Description" Style="{StaticResource DescHeaderStyle}"/>
+                <TextBlock Text="{Binding Item.Description}" Style="{StaticResource DescStyle}" />
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>
