@@ -7,7 +7,7 @@ using Plugin.CurrentActivity;
 
 namespace MasterDetail.Droid.Authentication
 {
-    public class SocialAuthentication : BaseSocialAuthenticator
+    public class SocialAuthenticator : BaseSocialAuthenticator
     {
         public override async Task<MobileServiceUser> LoginAsync(IMobileServiceClient client, MobileServiceAuthenticationProvider provider, IDictionary<string, string> parameters = null)
         {
