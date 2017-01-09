@@ -1,6 +1,4 @@
-﻿
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
@@ -13,7 +11,7 @@ using MasterDetail.Droid.Fragments;
 
 namespace MasterDetail.Droid.Activities
 {
-	[Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
+	[Activity(Label = "@string/app_name",
         LaunchMode = LaunchMode.SingleInstance,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
