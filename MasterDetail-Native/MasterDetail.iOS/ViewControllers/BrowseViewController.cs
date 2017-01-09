@@ -1,24 +1,20 @@
 using System;
 using System.Collections.Specialized;
-
 using Foundation;
-using UIKit;
-using System.Threading.Tasks;
 using MasterDetail.ViewModel;
+using UIKit;
 
 namespace MasterDetail.iOS
 {
-    public partial class BrowseViewController : UITableViewController
-    {
+	public partial class BrowseViewController : UITableViewController
+	{
 		UIRefreshControl refreshControl;
-        Task loadItems;
 
 		public ItemsViewModel ViewModel { get; set; }
 
-		public BrowseViewController(IntPtr handle) : base(handle) 
-		{ 
+		public BrowseViewController(IntPtr handle) : base(handle)
+		{
 			ViewModel = new ItemsViewModel();
-            Task loadItems = ViewModel.ExecuteLoadItemsCommand();
 		}
 
 		public override void ViewDidLoad()
@@ -37,15 +33,15 @@ namespace MasterDetail.iOS
 			ViewModel.Items.CollectionChanged += Items_CollectionChanged;
 
 		}
-        public override void ViewDidAppear(bool animated)
-        {
-            base.ViewDidAppear(animated);
+		public override async void ViewDidAppear(bool animated)
+		{
+			base.ViewDidAppear(animated);
 
-            if (ViewModel.Items.Count == 0)
-                loadItems.Wait();
-        }
+			if (ViewModel.Items.Count == 0)
+				await ViewModel.ExecuteLoadItemsCommand();
+		}
 
-        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
 		{
 			if (segue.Identifier == "NavigateToItemDetailSegue")
 			{
@@ -57,12 +53,12 @@ namespace MasterDetail.iOS
 			}
 		}
 
-		void RefreshControl_ValueChanged(object sender, EventArgs e)
+		async void RefreshControl_ValueChanged(object sender, EventArgs e)
 		{
-            if (!ViewModel.IsBusy && refreshControl.Refreshing)
-                loadItems.Wait();
+			if (!ViewModel.IsBusy && refreshControl.Refreshing)
+				await ViewModel.ExecuteLoadItemsCommand();
 
-        }
+		}
 
 		void IsBusy_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
@@ -87,13 +83,19 @@ namespace MasterDetail.iOS
 		{
 			InvokeOnMainThread(() => TableView.ReloadData());
 		}
+
+		[Action("UnwindToBrowse:")]
+		public void UnwindToBrowse(UIStoryboardSegue segue)
+		{
+			Console.WriteLine("UNwound");
+		}
 	}
 
 	class ItemsDataSource : UITableViewSource
 	{
 		static readonly NSString CELL_IDENTIFIER = new NSString("ITEM_CELL");
 
-        ItemsViewModel viewModel;
+		ItemsViewModel viewModel;
 
 		public ItemsDataSource(ItemsViewModel viewModel)
 		{
