@@ -13,7 +13,7 @@ using MasterDetail.Droid.Fragments;
 
 namespace MasterDetail.Droid.Activities
 {
-	[Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
+	[Activity(Label = "@string/app_name",
         LaunchMode = LaunchMode.SingleInstance,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
