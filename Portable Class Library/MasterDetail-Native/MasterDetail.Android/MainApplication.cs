@@ -3,6 +3,9 @@ using System;
 using Android.App;
 using Android.OS;
 using Android.Runtime;
+using MasterDetail.Droid.Helpers;
+using MasterDetail.Helpers;
+using MasterDetail.Interfaces;
 using Plugin.CurrentActivity;
 
 namespace MasterDetail.Droid
