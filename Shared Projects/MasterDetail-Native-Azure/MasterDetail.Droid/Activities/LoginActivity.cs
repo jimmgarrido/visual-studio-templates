@@ -1,7 +1,4 @@
-﻿#define AZURE
-
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
@@ -50,17 +47,6 @@ namespace MasterDetail.Droid.Activities
             // viewModel.PropertyChanged += ViewModel_PropertyChanged;
         }
 
-
-#if AZURE
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-        {
-            base.OnActivityResult(requestCode, resultCode, data);
-
-            Microsoft.Identity.Client.AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(
-              requestCode, resultCode, data);
-        }
-#endif
-
         protected override void OnStart()
         {
             base.OnStart();
@@ -92,42 +78,6 @@ namespace MasterDetail.Droid.Activities
         private async void SignInButton_Click(object sender, System.EventArgs e)
         {
 			await viewModel.SignIn();
-        }
-
-        private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            //    RunOnUiThread(() =>
-            //    {
-            //        switch(e.PropertyName)
-            //        {
-            //            case nameof(viewModel.IsBusy):
-            //                {
-            //                    if (viewModel.IsBusy)
-            //                    {
-            //                        progressBar.Indeterminate = true;
-            //                        signingInPanel.Visibility = ViewStates.Visible;
-            //                    }
-            //                    else
-            //                    {
-            //                        progressBar.Indeterminate = false;
-            //                        signingInPanel.Visibility = ViewStates.Invisible;
-
-            //                        if(Settings.IsLoggedIn)
-            //                        {
-            //                            var newIntent = new Intent(this, typeof(MainActivity));
-
-            //                            newIntent.AddFlags(ActivityFlags.ClearTop);
-            //                            newIntent.AddFlags(ActivityFlags.SingleTop);
-            //                            StartActivity(newIntent);
-            //                            Finish();
-            //                        }
-            //                    }
-            //                }
-            //                break;
-            //        }
-            //    });
-            //}
-
         }
     }
 }

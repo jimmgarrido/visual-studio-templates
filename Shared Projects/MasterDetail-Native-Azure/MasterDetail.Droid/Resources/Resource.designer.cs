@@ -26,9 +26,6 @@ namespace MasterDetail.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::Microsoft.Identity.Client.Resource.Id.agentWebView = global::MasterDetail.Droid.Resource.Id.agentWebView;
-			global::Microsoft.Identity.Client.Resource.Layout.WebAuthenticationBroker = global::MasterDetail.Droid.Resource.Layout.WebAuthenticationBroker;
-			global::Microsoft.Identity.Client.Resource.String.ApplicationName = global::MasterDetail.Droid.Resource.String.ApplicationName;
 		}
 		
 		public partial class Animation
@@ -2168,9 +2165,6 @@ namespace MasterDetail.Droid
 			// aapt resource value: 0x7f060015
 			public const int add = 2131099669;
 			
-			// aapt resource value: 0x7f060098
-			public const int agentWebView = 2131099800;
-			
 			// aapt resource value: 0x7f06004c
 			public const int alertTitle = 2131099724;
 			
@@ -2351,8 +2345,8 @@ namespace MasterDetail.Droid
 			// aapt resource value: 0x7f06008d
 			public const int media_actions = 2131099789;
 			
-			// aapt resource value: 0x7f060099
-			public const int menu_edit = 2131099801;
+			// aapt resource value: 0x7f060098
+			public const int menu_edit = 2131099800;
 			
 			// aapt resource value: 0x7f06001e
 			public const int middle = 2131099678;
@@ -2806,9 +2800,6 @@ namespace MasterDetail.Droid
 			// aapt resource value: 0x7f03003b
 			public const int toolbar = 2130903099;
 			
-			// aapt resource value: 0x7f03003c
-			public const int WebAuthenticationBroker = 2130903100;
-			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -2837,9 +2828,6 @@ namespace MasterDetail.Droid
 		
 		public partial class String
 		{
-			
-			// aapt resource value: 0x7f090024
-			public const int ApplicationName = 2131296292;
 			
 			// aapt resource value: 0x7f090000
 			public const int abc_action_bar_home_description = 2131296256;
@@ -2934,11 +2922,11 @@ namespace MasterDetail.Droid
 			// aapt resource value: 0x7f090012
 			public const int abc_toolbar_collapse_description = 2131296274;
 			
-			// aapt resource value: 0x7f090036
-			public const int app_description = 2131296310;
+			// aapt resource value: 0x7f090035
+			public const int app_description = 2131296309;
 			
-			// aapt resource value: 0x7f090026
-			public const int app_name = 2131296294;
+			// aapt resource value: 0x7f090025
+			public const int app_name = 2131296293;
 			
 			// aapt resource value: 0x7f090021
 			public const int appbar_scrolling_view_behavior = 2131296289;
@@ -2949,62 +2937,62 @@ namespace MasterDetail.Droid
 			// aapt resource value: 0x7f090023
 			public const int character_counter_pattern = 2131296291;
 			
-			// aapt resource value: 0x7f09002f
-			public const int description = 2131296303;
+			// aapt resource value: 0x7f09002e
+			public const int description = 2131296302;
 			
-			// aapt resource value: 0x7f090025
-			public const int hello = 2131296293;
-			
-			// aapt resource value: 0x7f090035
-			public const int hint_description = 2131296309;
-			
-			// aapt resource value: 0x7f090033
-			public const int hint_name = 2131296307;
+			// aapt resource value: 0x7f090024
+			public const int hello = 2131296292;
 			
 			// aapt resource value: 0x7f090034
-			public const int info = 2131296308;
-			
-			// aapt resource value: 0x7f09002e
-			public const int learn_more = 2131296302;
-			
-			// aapt resource value: 0x7f09002d
-			public const int login = 2131296301;
-			
-			// aapt resource value: 0x7f09002a
-			public const int notnow = 2131296298;
+			public const int hint_description = 2131296308;
 			
 			// aapt resource value: 0x7f090032
-			public const int quantity = 2131296306;
+			public const int hint_name = 2131296306;
+			
+			// aapt resource value: 0x7f090033
+			public const int info = 2131296307;
+			
+			// aapt resource value: 0x7f09002d
+			public const int learn_more = 2131296301;
+			
+			// aapt resource value: 0x7f09002c
+			public const int login = 2131296300;
+			
+			// aapt resource value: 0x7f090029
+			public const int notnow = 2131296297;
+			
+			// aapt resource value: 0x7f090031
+			public const int quantity = 2131296305;
 			
 			// aapt resource value: 0x7f090013
 			public const int search_menu_title = 2131296275;
 			
-			// aapt resource value: 0x7f090037
-			public const int sign_in_text = 2131296311;
+			// aapt resource value: 0x7f090036
+			public const int sign_in_text = 2131296310;
 			
-			// aapt resource value: 0x7f090029
-			public const int signin = 2131296297;
+			// aapt resource value: 0x7f090028
+			public const int signin = 2131296296;
 			
-			// aapt resource value: 0x7f09002b
-			public const int signing_in = 2131296299;
+			// aapt resource value: 0x7f09002a
+			public const int signing_in = 2131296298;
 			
 			// aapt resource value: 0x7f090014
 			public const int status_bar_notification_info_overflow = 2131296276;
 			
+			// aapt resource value: 0x7f090026
+			public const int tab1 = 2131296294;
+			
 			// aapt resource value: 0x7f090027
-			public const int tab1 = 2131296295;
-			
-			// aapt resource value: 0x7f090028
-			public const int tab2 = 2131296296;
-			
-			// aapt resource value: 0x7f090031
-			public const int text = 2131296305;
+			public const int tab2 = 2131296295;
 			
 			// aapt resource value: 0x7f090030
-			public const int title = 2131296304;
+			public const int text = 2131296304;
 			
-			// aapt resource value: 0x7f09002c
-			public const int version_number = 2131296300;
+			// aapt resource value: 0x7f09002f
+			public const int title = 2131296303;
+			
+			// aapt resource value: 0x7f09002b
+			public const int version_number = 2131296299;
 			
 			static String()
 			{
