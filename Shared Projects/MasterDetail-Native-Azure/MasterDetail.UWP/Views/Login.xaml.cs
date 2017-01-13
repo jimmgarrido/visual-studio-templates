@@ -14,7 +14,6 @@ namespace MasterDetail.UWP.Views
         public Login()
         {
             this.InitializeComponent();
-            MasterDetail.App.Initialize();
             DataContext = new LoginViewModel();
 
         }
