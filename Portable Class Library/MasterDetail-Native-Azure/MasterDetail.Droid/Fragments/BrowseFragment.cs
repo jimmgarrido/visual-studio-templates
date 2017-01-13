@@ -77,7 +77,6 @@ namespace MasterDetail.Droid
                 loadItems.Wait();
         }
 
-
         public override void OnStop()
         {
             base.OnStop();

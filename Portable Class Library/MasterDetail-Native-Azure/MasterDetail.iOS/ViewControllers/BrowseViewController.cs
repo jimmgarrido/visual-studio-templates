@@ -56,6 +56,11 @@ namespace MasterDetail.iOS
 
 				controller.ViewModel = new ItemDetailViewModel(item);
 			}
+            else if(segue.Identifier == "NavigateToNewItemSegue")
+            {
+                var controller = segue.DestinationViewController as ItemNewViewController;
+                controller.viewModel = ViewModel;
+            }
 		}
 
 		void RefreshControl_ValueChanged(object sender, EventArgs e)

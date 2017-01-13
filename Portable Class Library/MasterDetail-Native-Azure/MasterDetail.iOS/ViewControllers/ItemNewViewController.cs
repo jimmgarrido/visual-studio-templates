@@ -25,12 +25,14 @@ namespace MasterDetail.iOS
 			base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
 
-            btnSaveItem.TouchUpInside += (sender, e) =>
+            btnSaveItem.TouchUpInside += async (sender, e) =>
 			{
 				var _item = new Item();
 				_item.Text = txtTitle.Text;
 				_item.Description = txtDesc.Text;
-				MessagingCenter.Send(this, "AddItem", _item);
+                await viewModel.AddItem(_item);
+
+                NavigationController.PopViewController(true);
 			};
 		}
 

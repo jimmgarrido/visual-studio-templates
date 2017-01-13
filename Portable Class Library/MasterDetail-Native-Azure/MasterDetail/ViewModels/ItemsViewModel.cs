@@ -40,7 +40,10 @@ namespace MasterDetail.ViewModel
             }
         }
 
-        ItemDetailViewModel detailsViewModel;
-
+        public async Task AddItem(Item item)
+        {
+            Items.Add(item);
+            await DataStore.AddItemAsync(item);
+        }
     }
 }

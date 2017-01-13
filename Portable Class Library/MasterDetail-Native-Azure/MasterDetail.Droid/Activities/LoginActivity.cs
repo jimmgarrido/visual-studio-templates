@@ -56,8 +56,8 @@ namespace MasterDetail.Droid.Activities
         {
             base.OnActivityResult(requestCode, resultCode, data);
 
-            Microsoft.Identity.Client.AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(
-              requestCode, resultCode, data);
+            Microsoft.IdentityModel.Clients.ActiveDirectory.AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(
+            requestCode, resultCode, data);
         }
 #endif
 
