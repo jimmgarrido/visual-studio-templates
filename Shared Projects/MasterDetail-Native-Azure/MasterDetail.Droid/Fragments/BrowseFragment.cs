@@ -100,9 +100,10 @@ namespace MasterDetail.Droid
             
         }
 
-        private void Refresher_Refresh(object sender, EventArgs e)
+        private async void Refresher_Refresh(object sender, EventArgs e)
         {
-            loadItems.Wait();
+			await ViewModel.ExecuteLoadItemsCommand();
+			refresher.Refreshing = false;
         }
 
         public void BecameVisible()

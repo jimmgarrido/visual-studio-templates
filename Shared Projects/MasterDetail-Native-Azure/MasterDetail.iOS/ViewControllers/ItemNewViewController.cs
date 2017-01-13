@@ -31,6 +31,8 @@ namespace MasterDetail.iOS
 				_item.Text = txtTitle.Text;
 				_item.Description = txtDesc.Text;
 				MessagingCenter.Send(this, "AddItem", _item);
+
+				NavigationController.PopViewController(true);
 			};
 		}
 
