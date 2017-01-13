@@ -14,9 +14,8 @@ namespace MasterDetail.UWP.Views
         public Login()
         {
             this.InitializeComponent();
-            MasterDetail.App.Initialize();
-            DataContext = new LoginViewModel();
 
+            DataContext = new LoginViewModel();
         }
 
         private void ImageBrush_ImageFailed(object sender, ExceptionRoutedEventArgs e)

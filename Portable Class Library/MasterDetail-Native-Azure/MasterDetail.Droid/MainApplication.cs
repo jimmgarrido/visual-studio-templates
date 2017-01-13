@@ -1,9 +1,14 @@
-using System;
-
 using Android.App;
 using Android.OS;
 using Android.Runtime;
 using Plugin.CurrentActivity;
+using System;
+
+using MasterDetail.Helpers;
+using MasterDetail.Services;
+using MasterDetail.Droid.Authentication;
+using MasterDetail.Interfaces;
+using MasterDetail.Droid.Helpers;
 
 namespace MasterDetail.Droid
 {
@@ -23,6 +28,7 @@ namespace MasterDetail.Droid
 
 			App.Initialize();
             ServiceLocator.Instance.Register<IMessageDialog, MessageDialog>();
+            ServiceLocator.Instance.Register<IAuthenticator, SocialAuthenticator>();
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
         }
 

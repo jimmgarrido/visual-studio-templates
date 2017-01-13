@@ -45,7 +45,7 @@ namespace MasterDetail.Droid.Activities
 
 			Toolbar.MenuItemClick += (sender, e) =>
 			{
-				var intent = new Intent(this, typeof(AddItemActivity));;
+				var intent = new Intent(this, typeof(AddItemActivity));
 				StartActivity(intent);
 			};
 

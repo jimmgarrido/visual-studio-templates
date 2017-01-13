@@ -26,7 +26,7 @@ namespace MasterDetail.Droid.Activities
 		{
 			base.OnCreate(savedInstanceState);
 
-			// Create your application here
+            // Create your application here
 			SetContentView(Resource.Layout.activity_add_item);
             saveButton = FindViewById<FloatingActionButton>(Resource.Id.save_button);
             title = FindViewById<EditText>(Resource.Id.txtTitle);
@@ -40,8 +40,8 @@ namespace MasterDetail.Droid.Activities
             var _item = new Item();
             _item.Text = title.Text;
             _item.Description = description.Text;
-            MessagingCenter.Send(CrossCurrentActivity.Current.Activity, "AddItem", _item);
 
+			MessagingCenter.Send(this, "AddItem", _item);
             Finish();
         }
     }

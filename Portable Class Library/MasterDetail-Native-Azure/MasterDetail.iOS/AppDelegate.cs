@@ -5,6 +5,10 @@ using Foundation;
 using UIKit;
 
 using MasterDetail.Helpers;
+using MasterDetail.Services;
+using MasterDetail.iOS.Authentication;
+using MasterDetail.Interfaces;
+using MasterDetail.iOS.Helpers;
 
 namespace MasterDetail.iOS
 {
@@ -25,6 +29,7 @@ namespace MasterDetail.iOS
 		{
 			App.Initialize();
             ServiceLocator.Instance.Register<IMessageDialog, MessageDialog>();
+            ServiceLocator.Instance.Register<IAuthenticator, SocialAuthenticator>();
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             SQLitePCL.CurrentPlatform.Init();
 

@@ -1,5 +1,7 @@
 ﻿using MasterDetail.Helpers;
 using MasterDetail.Interfaces;
+using MasterDetail.Services;
+using MasterDetail.UWP.Authentication;
 using MasterDetail.UWP.Helpers;
 using System;
 using System.Collections.Generic;
@@ -61,6 +63,10 @@ namespace MasterDetail.UWP
                 rootFrame.Navigated += OnNavigated;
 
                 ServiceLocator.Instance.Register<IMessageDialog, MessageDialog>();
+                ServiceLocator.Instance.Register<IAuthenticator, SocialAuthenticator>();
+
+                MasterDetail.App.Initialize();
+
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application

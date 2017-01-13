@@ -40,8 +40,8 @@ namespace MasterDetail.Droid.Activities
             var _item = new Item();
             _item.Text = title.Text;
             _item.Description = description.Text;
-            MessagingCenter.Send(CrossCurrentActivity.Current.Activity, "AddItem", _item);
 
+			MessagingCenter.Send(this, "AddItem", _item);
             Finish();
         }
     }
