@@ -22,28 +22,29 @@ namespace MasterDetail
         public static bool AzureNeedsSetup => AzureMobileAppUrl == "https://CONFIGURE-THIS-URL.azurewebsites.net";
 		public static string AzureMobileAppUrl = "https://CONFIGURE-THIS-URL.azurewebsites.net";
 
-        public App()
-        {
+		public App()
+		{
 
-            if (!AzureNeedsSetup)
-                ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
-            else
-                ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
+		}
+
+        public static void Initialize()
+        {
+            if (AzureNeedsSetup)
+				ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
+			else
+				ServiceLocator.Instance.Register<IDataStore<Item>, AzureDataStore>();
+	
 #if __IOS__
             Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
             SQLitePCL.CurrentPlatform.Init();
 #elif __ANDROID__
-            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 #endif
-            ServiceLocator.Instance.Register<IMessageDialog, MessageDialog>();
-            ServiceLocator.Instance.Register<IDataStore<Item>, MockDataStore>();
-        }
 
-        public static void Initialize()
-        {
+			ServiceLocator.Instance.Register<IMessageDialog, MessageDialog>();
 
-
-
+			var store = ServiceLocator.Instance.Get<IDataStore<Item>>();
+			store.InitializeAsync();
 
         }
 
