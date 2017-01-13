@@ -9,6 +9,7 @@ using Android.Views;
 using Android.Widget;
 using MasterDetail.Droid.Activities;
 using MasterDetail.Helpers;
+using MasterDetail.Model;
 using MasterDetail.Services;
 using MasterDetail.ViewModel;
 
@@ -37,16 +38,20 @@ namespace MasterDetail.Droid
 		{
 			base.OnCreate(savedInstanceState);
 
-			// Create your fragment here
+			ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
+
+			ViewModel = new ItemsViewModel();
+			loadItems = ViewModel.ExecuteLoadItemsCommand();
+
+			MessagingCenter.Subscribe<AddItemActivity, Item>(this, "AddItem", async (obj, item) => 
+			{
+				   var _item = item as Item;
+				   await ViewModel.AddItem(_item);
+			});
 		}
 
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
-			ViewModel = new ItemsViewModel();
-            loadItems = ViewModel.ExecuteLoadItemsCommand();
-
-            ServiceLocator.Instance.Register<MockDataStore, MockDataStore>();
-
             View view = inflater.Inflate(Resource.Layout.fragment_browse, container, false);
 			var recyclerView =
 				view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
@@ -70,7 +75,6 @@ namespace MasterDetail.Droid
             base.OnStart();
 
             refresher.Refresh += Refresher_Refresh;
-            //ViewModel.PropertyChanged += ViewModel_PropertyChanged;
             adapter.ItemClick += Adapter_ItemClick;
 
             if (ViewModel.Items.Count == 0)
@@ -81,9 +85,14 @@ namespace MasterDetail.Droid
         {
             base.OnStop();
             refresher.Refresh -= Refresher_Refresh;
-            //ViewModel.PropertyChanged -= ViewModel_PropertyChanged;
             adapter.ItemClick -= Adapter_ItemClick;
         }
+
+		public override void OnDestroy()
+		{
+			base.OnDestroy();
+			MessagingCenter.Unsubscribe<AddItemActivity>(this,"AddItem");
+		}
 
         private void Adapter_ItemClick(object sender, RecyclerClickEventArgs e)
         {
@@ -94,14 +103,10 @@ namespace MasterDetail.Droid
             Activity.StartActivity(intent);
         }
 
-        private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        private async void Refresher_Refresh(object sender, EventArgs e)
         {
-            
-        }
-
-        private void Refresher_Refresh(object sender, EventArgs e)
-        {
-            loadItems.Wait();
+			await ViewModel.ExecuteLoadItemsCommand();
+			refresher.Refreshing = false;
         }
 
         public void BecameVisible()
